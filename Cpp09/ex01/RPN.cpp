@@ -62,7 +62,7 @@ void RPN::operate(std::string str)
 {
 	std::string operators;
 
-	if (str.empty())
+	if (str.size() == 0)
 	{
 		std::cout << "Error: Empty or Missing Input!" << std::endl;
 		exit (-1);

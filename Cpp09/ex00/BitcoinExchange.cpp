@@ -146,7 +146,7 @@ void BitcoinExchange::read_infile(std::string infile)
 	std::getline(file, line);
 	while (std::getline(file, line)) //theres no 3rd parameter(delimiter) so by default delimiter is \n
 	{
-		if (line.empty())
+		if (line.size() == 0)
 		{
 			std::cerr << "Error: Empty line found!" << std::endl;
 			continue;
