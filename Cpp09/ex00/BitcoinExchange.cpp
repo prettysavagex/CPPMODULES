@@ -26,7 +26,7 @@ bool BitcoinExchange::isValidDouble(const std::string& str)
 	std::istringstream iss(str);
 	double value;
 	iss >> value;
-	return !iss.fail() && iss.eof(); // Geçerli double'a dönüştürülebilirse ve tamamı okunmuşsa true döndür
+	return !iss.fail() && iss.eof(); // If it can be convertd to a valid double and has read entirely, returns true.
 }
 
 double BitcoinExchange::compare_dates(std::string key, double value)
@@ -143,7 +143,7 @@ void BitcoinExchange::read_infile(std::string infile)
 
 	std::string line;
 
-	std::getline(file, line);
+	std::getline(file, line); //skip the first line
 	while (std::getline(file, line)) //theres no 3rd parameter(delimiter) so by default delimiter is \n
 	{
 		if (line.size() == 0)
@@ -151,6 +151,7 @@ void BitcoinExchange::read_infile(std::string infile)
 			std::cerr << "Error: Empty line found!" << std::endl;
 			continue;
 		}
+
 		std::istringstream iss(line);
 		std::string date;
 		std::string rateStr;
