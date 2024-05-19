@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = $(wildcard *.cpp)
+SRCS = main.cpp BitcoinExchange.cpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = btc
 

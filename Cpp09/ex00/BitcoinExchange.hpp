@@ -23,7 +23,7 @@ class BitcoinExchange
 		bool check_date_format(const std::string &date) const;
 		double compare_dates(std::string key, double value);
 		bool isValidDouble(const std::string& str);
-		int daysInMonth(int year, int month)
+		int daysInMonth(int year, int month) const;
 };
 
 #endif

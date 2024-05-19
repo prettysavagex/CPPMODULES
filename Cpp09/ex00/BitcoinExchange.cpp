@@ -41,7 +41,7 @@ double BitcoinExchange::compare_dates(std::string key, double value)
 	return (0.0);
 }
 
-int BitcoinExchange::daysInMonth(int year, int month)
+int BitcoinExchange::daysInMonth(int year, int month) const
 {
 	if (month == 02)
 	{
@@ -72,7 +72,7 @@ bool BitcoinExchange::check_date(const std::string &date) const
 	
 	if (!(iss >> year >> dash1 >> month >> dash2 >> day))
 		return false;
-	if (dash1 != '-' || dash2 != '-' || year < 2000 || year > 2022 || month < 01 || month > 12 || day < 01 || day > daysInMonth(year, month))
+	if (dash1 != '-' || dash2 != '-' || year < 2000 || year > 2022 || month < 01 || month > 12 || day < 01 || day > this->daysInMonth(year, month))
 		return false;
 	return true;
 }
